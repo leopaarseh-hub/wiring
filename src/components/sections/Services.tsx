@@ -1,9 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { IconBuilding, IconCompass, IconLayers, IconClipboard } from "@/components/ui/Icons";
+import { IconCompass, IconLayers, IconBuilding, IconClipboard } from "@/components/ui/Icons";
 
 const icons = [IconCompass, IconLayers, IconBuilding, IconClipboard];
+
+const images = [
+  "/service-standortanalyse.jpg",
+  "/service-konzept.jpg",
+  "/service-bauplanung.jpg",
+  "/service-gutachten.jpg",
+];
 
 export default function Services() {
   const t = useTranslations("services");
@@ -20,7 +28,7 @@ export default function Services() {
       }}
     >
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-        {/* Header */}
+        {/* Section header */}
         <div
           style={{
             display: "grid",
@@ -67,15 +75,12 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Service cards */}
+        {/* Service cards with real images */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: "1.5px",
-            background: "rgba(255,255,255,0.06)",
-            borderRadius: "16px",
-            overflow: "hidden",
+            gap: "1.5rem",
           }}
         >
           {items.map((item, i) => {
@@ -84,42 +89,117 @@ export default function Services() {
               <div
                 key={i}
                 style={{
-                  background: "#0a0a0b",
-                  padding: "2.5rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1.5rem",
-                  transition: "background 0.25s",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                  position: "relative",
                   cursor: "default",
+                  transition: "border-color 0.3s, transform 0.3s",
                 }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLDivElement).style.background = "#0f0f10")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLDivElement).style.background = "#0a0a0b")}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.borderColor = "rgba(200,169,110,0.3)";
+                  el.style.transform = "translateY(-4px)";
+                  const overlay = el.querySelector(".srv-overlay") as HTMLDivElement;
+                  if (overlay) overlay.style.opacity = "1";
+                  const img = el.querySelector(".srv-img") as HTMLDivElement;
+                  if (img) img.style.transform = "scale(1.04)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLDivElement;
+                  el.style.borderColor = "rgba(255,255,255,0.07)";
+                  el.style.transform = "translateY(0)";
+                  const overlay = el.querySelector(".srv-overlay") as HTMLDivElement;
+                  if (overlay) overlay.style.opacity = "0";
+                  const img = el.querySelector(".srv-img") as HTMLDivElement;
+                  if (img) img.style.transform = "scale(1)";
+                }}
               >
-                {/* Icon container */}
+                {/* Image */}
                 <div
                   style={{
-                    width: "56px",
-                    height: "56px",
-                    borderRadius: "12px",
-                    background: "rgba(200,169,110,0.06)",
-                    border: "1px solid rgba(200,169,110,0.15)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#c8a96e",
-                    flexShrink: 0,
+                    position: "relative",
+                    aspectRatio: "4/3",
+                    overflow: "hidden",
+                    background: "#0d0d0e",
                   }}
                 >
-                  <Icon size={24} />
+                  <div
+                    className="srv-img"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      transition: "transform 0.5s ease",
+                    }}
+                  >
+                    <Image
+                      src={images[i]}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                      style={{ objectFit: "cover", filter: "grayscale(20%) brightness(0.85)" }}
+                    />
+                  </div>
+                  {/* Image gradient overlay */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(to top, rgba(10,10,11,0.9) 0%, rgba(10,10,11,0.3) 50%, transparent 100%)",
+                      zIndex: 1,
+                    }}
+                  />
+                  {/* Hover highlight */}
+                  <div
+                    className="srv-overlay"
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "rgba(200,169,110,0.08)",
+                      zIndex: 2,
+                      opacity: 0,
+                      transition: "opacity 0.3s",
+                    }}
+                  />
+                  {/* Icon badge */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "1.25rem",
+                      right: "1.25rem",
+                      zIndex: 3,
+                      width: "44px",
+                      height: "44px",
+                      borderRadius: "10px",
+                      background: "rgba(10,10,11,0.65)",
+                      border: "1px solid rgba(200,169,110,0.25)",
+                      backdropFilter: "blur(8px)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#c8a96e",
+                    }}
+                  >
+                    <Icon size={20} />
+                  </div>
                 </div>
 
-                <div>
+                {/* Card body */}
+                <div
+                  style={{
+                    padding: "1.75rem",
+                    background: "#0a0a0b",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.75rem",
+                  }}
+                >
                   <h3
                     style={{
                       fontSize: "1.0625rem",
                       fontWeight: 500,
                       color: "#f5f5f0",
-                      marginBottom: "0.75rem",
                       letterSpacing: "-0.01em",
                     }}
                   >
@@ -134,21 +214,25 @@ export default function Services() {
                   >
                     {item.description}
                   </p>
-                </div>
-
-                <div
-                  style={{
-                    marginTop: "auto",
-                    paddingTop: "1rem",
-                    borderTop: "1px solid rgba(255,255,255,0.05)",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.375rem",
-                    fontSize: "0.8125rem",
-                    color: "rgba(200,169,110,0.6)",
-                  }}
-                >
-                  <span>HOAI Phase {i + 1}–{i + 2}</span>
+                  <div
+                    style={{
+                      marginTop: "0.5rem",
+                      paddingTop: "1rem",
+                      borderTop: "1px solid rgba(255,255,255,0.05)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.375rem",
+                      fontSize: "0.75rem",
+                      color: "rgba(200,169,110,0.55)",
+                      letterSpacing: "0.04em",
+                    }}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <circle cx="6" cy="6" r="5" stroke="#c8a96e" strokeWidth="0.75" opacity="0.5" />
+                      <circle cx="6" cy="6" r="2" fill="#c8a96e" opacity="0.5" />
+                    </svg>
+                    HOAI Phase {i + 1}–{i + 2}
+                  </div>
                 </div>
               </div>
             );
