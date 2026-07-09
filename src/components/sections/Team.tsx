@@ -37,9 +37,9 @@ export default function Team() {
             <div style={{
               background: "#eff6ff", border: "1px solid #dbeafe", borderRadius: 12, padding: "1.25rem",
             }}>
-              <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#2563eb", marginBottom: "0.375rem" }}>Unser Versprechen</p>
+              <p style={{ fontSize: "0.8125rem", fontWeight: 600, color: "#2563eb", marginBottom: "0.375rem" }}>{t("promise_title")}</p>
               <p style={{ fontSize: "0.875rem", color: "#3d3d3a", lineHeight: 1.65 }}>
-                Über 80 Jahre gebündelte Ingenieurs- und Architektur-Erfahrung in einem Team.
+                {t("promise_text")}
               </p>
             </div>
           </div>

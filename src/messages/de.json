@@ -11,13 +11,18 @@
     "headline": "Abstrakt Architektur",
     "subheadline": "Wir entwickeln innovative und nachhaltige Lösungen für Ihre Bauprojekte – von der ersten Idee bis zur finalen Umsetzung.",
     "cta_primary": "Projekt anfragen",
-    "cta_secondary": "Leistungen entdecken"
+    "cta_secondary": "Leistungen entdecken",
+    "direct_contact": "Direktkontakt",
+    "send_inquiry": "Anfrage senden"
   },
   "story": {
     "label": "Unsere Story",
     "title": "Lernen Sie uns kennen",
     "p1": "Seit vielen Jahren steht die Wir Ingenieurgesellschaft mbH für Innovation und Qualität in der Immobilien- und Projektentwicklung. Neben dem Verkauf von Immobilien sind wir spezialisiert auf die Entwicklung von Grundstücken und Arealen, die Geschäfts- und Wohnimmobilien vereinen.",
-    "p2": "Mit Leidenschaft und Expertise wagen wir uns in Nischen vor, entdecken frühzeitig Trends und führen diese mit durchdachten Konzepten bis zur Marktreife. Unser Anspruch ist es, nachhaltige und zukunftsorientierte Lösungen zu schaffen, die Mehrwert für unsere Kunden und die Gesellschaft bieten."
+    "p2": "Mit Leidenschaft und Expertise wagen wir uns in Nischen vor, entdecken frühzeitig Trends und führen diese mit durchdachten Konzepten bis zur Marktreife. Unser Anspruch ist es, nachhaltige und zukunftsorientierte Lösungen zu schaffen, die Mehrwert für unsere Kunden und die Gesellschaft bieten.",
+    "cta": "Gespräch vereinbaren",
+    "badge_label": "Vollständige Abdeckung",
+    "founded": "Hamburg, Deutschland"
   },
   "services": {
     "label": "Unsere Leistungen",
@@ -46,6 +51,8 @@
     "label": "Über uns",
     "title": "Das Team hinter Ihren Projekten",
     "description": "Unser Team besteht aus erfahrenen Architekten und Ingenieuren, die mit Leidenschaft und Engagement an innovativen Lösungen arbeiten. Gemeinsam vereinen wir Kreativität, Präzision und ein tiefes Verständnis für Architektur und Bauplanung.",
+    "promise_title": "Unser Versprechen",
+    "promise_text": "Über 80 Jahre gebündelte Ingenieurs- und Architektur-Erfahrung in einem Team.",
     "members": [
       {
         "role": "Architektin",
@@ -80,7 +87,9 @@
     "cta": "Nachricht senden",
     "phone": "Telefon",
     "email": "E-Mail",
-    "address": "Adresse"
+    "address": "Adresse",
+    "card_title": "Schreiben Sie uns",
+    "card_desc": "Wir antworten in der Regel innerhalb von 24 Stunden auf Ihre Anfrage."
   },
   "footer": {
     "tagline": "Innovation trifft Präzision.",
@@ -88,6 +97,7 @@
     "imprint": "Impressum",
     "contact": "Kontakt",
     "credit": "Design & Entwicklung",
-    "rights": "Alle Rechte vorbehalten"
+    "rights": "Alle Rechte vorbehalten",
+    "email_btn": "E-Mail senden"
   }
 }

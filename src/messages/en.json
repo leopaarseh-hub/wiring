@@ -11,13 +11,18 @@
     "headline": "Abstract Architecture",
     "subheadline": "We develop innovative and sustainable solutions for your construction projects – from the first idea to final implementation.",
     "cta_primary": "Request a project",
-    "cta_secondary": "Discover services"
+    "cta_secondary": "Discover services",
+    "direct_contact": "Direct contact",
+    "send_inquiry": "Send inquiry"
   },
   "story": {
     "label": "Our Story",
     "title": "Get to know us",
     "p1": "For many years, Wir Ingenieurgesellschaft mbH has stood for innovation and quality in real estate and project development. In addition to property sales, we specialize in the development of land and areas that combine commercial and residential real estate.",
-    "p2": "With passion and expertise, we venture into niches, identify trends early and bring them to market maturity with well-thought-out concepts. Our goal is to create sustainable and forward-thinking solutions that add value for our clients and society."
+    "p2": "With passion and expertise, we venture into niches, identify trends early and bring them to market maturity with well-thought-out concepts. Our goal is to create sustainable and forward-thinking solutions that add value for our clients and society.",
+    "cta": "Schedule a meeting",
+    "badge_label": "Full coverage",
+    "founded": "Hamburg, Germany"
   },
   "services": {
     "label": "Our Services",
@@ -46,6 +51,8 @@
     "label": "About Us",
     "title": "The team behind your projects",
     "description": "Our team consists of experienced architects and engineers who work with passion and commitment on innovative solutions. Together we combine creativity, precision and a deep understanding of architecture and construction planning.",
+    "promise_title": "Our promise",
+    "promise_text": "Over 80 years of combined engineering and architecture experience in one team.",
     "members": [
       {
         "role": "Architect",
@@ -80,7 +87,9 @@
     "cta": "Send a message",
     "phone": "Phone",
     "email": "Email",
-    "address": "Address"
+    "address": "Address",
+    "card_title": "Write to us",
+    "card_desc": "We typically reply within 24 hours of receiving your inquiry."
   },
   "footer": {
     "tagline": "Where innovation meets precision.",
@@ -88,6 +97,7 @@
     "imprint": "Imprint",
     "contact": "Contact",
     "credit": "Design & Development",
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "email_btn": "Send email"
   }
 }

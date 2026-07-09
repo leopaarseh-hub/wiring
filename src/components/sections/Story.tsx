@@ -46,7 +46,7 @@ export default function Story() {
               </div>
               <div>
                 <p style={{ fontSize: "0.75rem", color: "#2563eb", letterSpacing: "0.08em", marginBottom: "0.375rem", fontWeight: 600 }}>WIR INGENIEURGESELLSCHAFT MBH</p>
-                <p style={{ fontSize: "1.25rem", fontWeight: 700, color: "#111110", letterSpacing: "-0.02em" }}>Hamburg, Deutschland</p>
+                <p style={{ fontSize: "1.25rem", fontWeight: 700, color: "#111110", letterSpacing: "-0.02em" }}>{t("founded")}</p>
               </div>
             </div>
             {/* Floating stat */}
@@ -55,7 +55,7 @@ export default function Story() {
               background: "#2563eb", borderRadius: 12, padding: "1.125rem 1.5rem",
               boxShadow: "0 8px 24px rgba(37,99,235,0.3)", color: "#fff",
             }}>
-              <p style={{ fontSize: "0.7rem", opacity: 0.75, marginBottom: "0.2rem" }}>Vollständige Abdeckung</p>
+              <p style={{ fontSize: "0.7rem", opacity: 0.75, marginBottom: "0.2rem" }}>{t("badge_label")}</p>
               <p style={{ fontSize: "1.375rem", fontWeight: 700 }}>HOAI 1–8</p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function Story() {
               onMouseEnter={(e) => (e.currentTarget.style.background = "#dbeafe")}
               onMouseLeave={(e) => (e.currentTarget.style.background = "#eff6ff")}
             >
-              Gespräch vereinbaren
+              {t("cta")}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </a>
           </div>

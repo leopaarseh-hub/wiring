@@ -73,10 +73,10 @@ export default function Contact() {
           }}>
             <div>
               <h3 style={{ fontSize: "1.625rem", fontWeight: 800, letterSpacing: "-0.025em", marginBottom: "0.75rem" }}>
-                Schreiben Sie uns
+                {t("card_title")}
               </h3>
               <p style={{ fontSize: "0.9375rem", opacity: 0.8, lineHeight: 1.7 }}>
-                Wir antworten in der Regel innerhalb von 24 Stunden auf Ihre Anfrage.
+                {t("card_desc")}
               </p>
             </div>
 

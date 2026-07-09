@@ -91,7 +91,7 @@ export default function Footer() {
               onMouseEnter={(e) => (e.currentTarget.style.background = "#1d4ed8")}
               onMouseLeave={(e) => (e.currentTarget.style.background = "#2563eb")}
             >
-              <IconMail size={14} /> E-Mail senden
+              <IconMail size={14} /> {t("email_btn")}
             </a>
           </div>
         </div>

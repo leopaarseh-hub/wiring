@@ -154,7 +154,7 @@ export default function Hero() {
             minWidth: 240,
           }}>
             <p style={{ fontSize: "0.75rem", fontWeight: 700, color: "rgba(255,255,255,0.45)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
-              Direktkontakt
+              {t("direct_contact")}
             </p>
             <a href="tel:+4916336358832"
               style={{
@@ -200,7 +200,7 @@ export default function Hero() {
               onMouseEnter={(e) => (e.currentTarget.style.background = "#1d4ed8")}
               onMouseLeave={(e) => (e.currentTarget.style.background = "#2563eb")}
             >
-              <IconMail size={15} /> Anfrage senden
+              <IconMail size={15} /> {t("send_inquiry")}
             </a>
           </div>
         </div>
