@@ -129,9 +129,9 @@ export default function Hero() {
               maxWidth: "fit-content",
             }}>
               {[
-                { val: "40+", label: "Jahre Expertise" },
-                { val: "HOAI 1–8", label: "Leistungsphasen" },
-                { val: "100%", label: "Commitment" },
+                { val: t("stat_years_val"), label: t("stat_years_label") },
+                { val: t("stat_phases_val"), label: t("stat_phases_label") },
+                { val: t("stat_commit_val"), label: t("stat_commit_label") },
               ].map((s, i) => (
                 <div key={s.val} style={{
                   padding: "1rem 1.75rem",

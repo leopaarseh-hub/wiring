@@ -13,7 +13,13 @@
     "cta_primary": "درخواست پروژه",
     "cta_secondary": "کشف خدمات",
     "direct_contact": "تماس مستقیم",
-    "send_inquiry": "ارسال درخواست"
+    "send_inquiry": "ارسال درخواست",
+    "stat_years_val": "۴۰+",
+    "stat_years_label": "سال تجربه",
+    "stat_phases_val": "HOAI ۱–۸",
+    "stat_phases_label": "مراحل خدمات",
+    "stat_commit_val": "۱۰۰٪",
+    "stat_commit_label": "تعهد"
   },
   "story": {
     "label": "داستان ما",

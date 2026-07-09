@@ -13,7 +13,13 @@
     "cta_primary": "Projekt anfragen",
     "cta_secondary": "Leistungen entdecken",
     "direct_contact": "Direktkontakt",
-    "send_inquiry": "Anfrage senden"
+    "send_inquiry": "Anfrage senden",
+    "stat_years_val": "40+",
+    "stat_years_label": "Jahre Expertise",
+    "stat_phases_val": "HOAI 1–8",
+    "stat_phases_label": "Leistungsphasen",
+    "stat_commit_val": "100%",
+    "stat_commit_label": "Commitment"
   },
   "story": {
     "label": "Unsere Story",

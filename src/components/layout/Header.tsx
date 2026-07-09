@@ -169,7 +169,7 @@ export default function Header() {
             }}
             onMouseEnter={(e) => { const a = e.currentTarget as HTMLAnchorElement; a.style.background = scrolled ? "#1d4ed8" : "rgba(255,255,255,0.25)"; a.style.transform = "translateY(-1px)"; }}
             onMouseLeave={(e) => { const a = e.currentTarget as HTMLAnchorElement; a.style.background = scrolled ? "#2563eb" : "rgba(255,255,255,0.15)"; a.style.transform = "none"; }}
-          >Kontakt</a>
+          >{t("contact")}</a>
 
           {/* Burger */}
           <button onClick={() => setOpen(!open)} className="hd-burger"
@@ -202,7 +202,7 @@ export default function Header() {
               fontSize: "0.9375rem", fontWeight: 700, color: "#fff",
               background: "#2563eb", padding: "0.875rem 2rem", borderRadius: "8px", alignSelf: "flex-start",
             }}
-          >Kontakt</a>
+          >{t("contact")}</a>
         </div>
       )}
 

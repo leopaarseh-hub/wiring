@@ -13,7 +13,13 @@
     "cta_primary": "Request a project",
     "cta_secondary": "Discover services",
     "direct_contact": "Direct contact",
-    "send_inquiry": "Send inquiry"
+    "send_inquiry": "Send inquiry",
+    "stat_years_val": "40+",
+    "stat_years_label": "Years of expertise",
+    "stat_phases_val": "HOAI 1–8",
+    "stat_phases_label": "Service phases",
+    "stat_commit_val": "100%",
+    "stat_commit_label": "Commitment"
   },
   "story": {
     "label": "Our Story",
