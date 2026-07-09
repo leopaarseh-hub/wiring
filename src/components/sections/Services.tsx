@@ -88,21 +88,9 @@ export default function Services() {
                   <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "#111110", marginBottom: "0.625rem", letterSpacing: "-0.01em" }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: "0.875rem", color: "#7a7a76", lineHeight: 1.7, marginBottom: "1.25rem" }}>
+                  <p style={{ fontSize: "0.875rem", color: "#7a7a76", lineHeight: 1.7 }}>
                     {item.description}
                   </p>
-                  <div style={{
-                    display: "inline-flex", alignItems: "center", gap: "0.375rem",
-                    fontSize: "0.75rem", fontWeight: 600, color: "#2563eb",
-                    background: "#eff6ff", border: "1px solid #dbeafe",
-                    padding: "0.3rem 0.625rem", borderRadius: 6,
-                  }}>
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                      <circle cx="5" cy="5" r="4.5" stroke="#2563eb" strokeWidth="0.75" />
-                      <circle cx="5" cy="5" r="1.5" fill="#2563eb" />
-                    </svg>
-                    HOAI {i + 1}–{i + 2}
-                  </div>
                 </div>
               </div>
             );
