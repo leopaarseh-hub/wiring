@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "services": "Leistungen",
+    "about": "Über uns",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "story": "Unsere Story"
+  },
+  "hero": {
+    "tagline": "Ingenieurbüro Hamburg",
+    "headline": "Abstrakt Architektur",
+    "subheadline": "Wir entwickeln innovative und nachhaltige Lösungen für Ihre Bauprojekte – von der ersten Idee bis zur finalen Umsetzung.",
+    "cta_primary": "Projekt anfragen",
+    "cta_secondary": "Leistungen entdecken"
+  },
+  "story": {
+    "label": "Unsere Story",
+    "title": "Lernen Sie uns kennen",
+    "p1": "Seit vielen Jahren steht die Wir Ingenieurgesellschaft mbH für Innovation und Qualität in der Immobilien- und Projektentwicklung. Neben dem Verkauf von Immobilien sind wir spezialisiert auf die Entwicklung von Grundstücken und Arealen, die Geschäfts- und Wohnimmobilien vereinen.",
+    "p2": "Mit Leidenschaft und Expertise wagen wir uns in Nischen vor, entdecken frühzeitig Trends und führen diese mit durchdachten Konzepten bis zur Marktreife. Unser Anspruch ist es, nachhaltige und zukunftsorientierte Lösungen zu schaffen, die Mehrwert für unsere Kunden und die Gesellschaft bieten."
+  },
+  "services": {
+    "label": "Unsere Leistungen",
+    "title": "Kompetenz entlang aller Leistungsphasen",
+    "description": "WIR begleiten Ihr Immobilienprojekt von der ersten Idee bis zur finalen Umsetzung – kompetent, zuverlässig und mit einem klaren Fokus auf Ihre Ziele. Als erfahrene Ingenieurgesellschaft decken wir alle Leistungsphasen der HOAI 1–8 ab.",
+    "items": [
+      {
+        "title": "Standortanalyse",
+        "description": "Systematische Bewertung von Lage, Potenzial und Marktumfeld zur optimalen Grundlagenermittlung."
+      },
+      {
+        "title": "Strategisches Konzept",
+        "description": "Entwicklung zukunftsorientierter Nutzungskonzepte mit Fokus auf Wirtschaftlichkeit und Nachhaltigkeit."
+      },
+      {
+        "title": "Bauplanung und Umsetzung",
+        "description": "Professionelle Planung und Realisierung aller Leistungsphasen gemäß HOAI 1–8."
+      },
+      {
+        "title": "Gutachtertätigkeit",
+        "description": "Unabhängige Sachverständigenleistungen für Immobilienbewertung und bautechnische Fragestellungen."
+      }
+    ]
+  },
+  "team": {
+    "label": "Über uns",
+    "title": "Das Team hinter Ihren Projekten",
+    "description": "Unser Team besteht aus erfahrenen Architekten und Ingenieuren, die mit Leidenschaft und Engagement an innovativen Lösungen arbeiten. Gemeinsam vereinen wir Kreativität, Präzision und ein tiefes Verständnis für Architektur und Bauplanung.",
+    "members": [
+      {
+        "role": "Architektin",
+        "name": "Hoda Fakharian",
+        "bio": "Leidenschaftliche Architektin mit über 17 Jahren Erfahrung. Masterabschluss, Mitglied der Architektenkammer. Fokus auf innovative, nachhaltige und ästhetische Designs, die Funktionalität und Kreativität vereinen."
+      },
+      {
+        "role": "Technischer Leiter",
+        "name": "Dipl.-Ing. Amir Schojai M.Sc.",
+        "bio": "Erfahrener Bauingenieur mit über 40 Jahren Expertise. Bauvorlageberechtigter Ingenieur, Sachverständiger für Immobilienbewertung, Bauleitung und Planung im Bereich Brandschutz (TÜV Rheinland)."
+      },
+      {
+        "role": "Elektroingenieur",
+        "name": "Hamed Sabeti",
+        "bio": "Elektroingenieur mit 25 Jahren Erfahrung. Spezialisiert auf innovative Lösungen – von der Planung und Umsetzung komplexer elektrotechnischer Systeme bis zur Entwicklung effizienter und nachhaltiger Konzepte."
+      }
+    ]
+  },
+  "projects": {
+    "label": "Unsere Projekte",
+    "title": "Visionen, die Realität wurden",
+    "description": "Hier präsentieren wir eine Auswahl unserer erfolgreich abgeschlossenen Projekte. Jedes Projekt spiegelt unsere Leidenschaft, Expertise und unser Engagement wider.",
+    "items": [
+      { "title": "Wohnsiedlung Essen", "category": "Wohnbau" },
+      { "title": "Augencentrum am Rothenbaum", "category": "Gewerbebau" }
+    ]
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Starten Sie Ihr Projekt mit uns",
+    "description": "Wir freuen uns auf Ihre Anfrage. Nehmen Sie Kontakt auf und lassen Sie uns gemeinsam Ihre Vision realisieren.",
+    "cta": "Nachricht senden",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse"
+  },
+  "footer": {
+    "tagline": "Innovation trifft Präzision.",
+    "privacy": "Datenschutz",
+    "imprint": "Impressum",
+    "contact": "Kontakt",
+    "credit": "Design & Entwicklung",
+    "rights": "Alle Rechte vorbehalten"
+  }
+}

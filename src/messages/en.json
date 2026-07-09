@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "story": "Our Story"
+  },
+  "hero": {
+    "tagline": "Engineering Office Hamburg",
+    "headline": "Abstract Architecture",
+    "subheadline": "We develop innovative and sustainable solutions for your construction projects – from the first idea to final implementation.",
+    "cta_primary": "Request a project",
+    "cta_secondary": "Discover services"
+  },
+  "story": {
+    "label": "Our Story",
+    "title": "Get to know us",
+    "p1": "For many years, Wir Ingenieurgesellschaft mbH has stood for innovation and quality in real estate and project development. In addition to property sales, we specialize in the development of land and areas that combine commercial and residential real estate.",
+    "p2": "With passion and expertise, we venture into niches, identify trends early and bring them to market maturity with well-thought-out concepts. Our goal is to create sustainable and forward-thinking solutions that add value for our clients and society."
+  },
+  "services": {
+    "label": "Our Services",
+    "title": "Expertise across all service phases",
+    "description": "WIR accompanies your real estate project from the first idea to final implementation – competent, reliable and with a clear focus on your goals. As an experienced engineering firm, we cover all HOAI service phases 1–8.",
+    "items": [
+      {
+        "title": "Site Analysis",
+        "description": "Systematic evaluation of location, potential and market environment for optimal baseline determination."
+      },
+      {
+        "title": "Strategic Concept",
+        "description": "Development of forward-thinking usage concepts with a focus on economic efficiency and sustainability."
+      },
+      {
+        "title": "Construction Planning & Implementation",
+        "description": "Professional planning and realization of all service phases according to HOAI 1–8."
+      },
+      {
+        "title": "Expert Assessment",
+        "description": "Independent expert services for real estate valuation and structural engineering questions."
+      }
+    ]
+  },
+  "team": {
+    "label": "About Us",
+    "title": "The team behind your projects",
+    "description": "Our team consists of experienced architects and engineers who work with passion and commitment on innovative solutions. Together we combine creativity, precision and a deep understanding of architecture and construction planning.",
+    "members": [
+      {
+        "role": "Architect",
+        "name": "Hoda Fakharian",
+        "bio": "Passionate architect with over 17 years of experience. Master's degree, member of the Chamber of Architects. Focus on innovative, sustainable and aesthetic designs that combine functionality and creativity."
+      },
+      {
+        "role": "Technical Director",
+        "name": "Dipl.-Ing. Amir Schojai M.Sc.",
+        "bio": "Experienced structural engineer with over 40 years of expertise. Authorized building engineer, certified real estate appraiser, site management and fire protection planning (TÜV Rheinland)."
+      },
+      {
+        "role": "Electrical Engineer",
+        "name": "Hamed Sabeti",
+        "bio": "Electrical engineer with 25 years of experience. Specialized in innovative solutions – from planning and implementing complex electrical systems to developing efficient and sustainable concepts."
+      }
+    ]
+  },
+  "projects": {
+    "label": "Our Projects",
+    "title": "Visions turned into reality",
+    "description": "Here we present a selection of our successfully completed projects. Each project reflects our passion, expertise and commitment to delivering exceptional results.",
+    "items": [
+      { "title": "Residential Estate Essen", "category": "Residential" },
+      { "title": "Eye Centre am Rothenbaum", "category": "Commercial" }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Start your project with us",
+    "description": "We look forward to your inquiry. Get in touch and let us bring your vision to life together.",
+    "cta": "Send a message",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address"
+  },
+  "footer": {
+    "tagline": "Where innovation meets precision.",
+    "privacy": "Privacy Policy",
+    "imprint": "Imprint",
+    "contact": "Contact",
+    "credit": "Design & Development",
+    "rights": "All rights reserved"
+  }
+}
