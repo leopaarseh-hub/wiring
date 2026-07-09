@@ -5,11 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { IconMenu, IconClose, IconGlobe, IconChevronDown } from "@/components/ui/Icons";
 
-const localeLabels: Record<string, string> = {
-  de: "Deutsch",
-  en: "English",
-  fa: "فارسی",
-};
+const localeLabels: Record<string, string> = { de: "Deutsch", en: "English", fa: "فارسی" };
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -20,9 +16,9 @@ export default function Header() {
   const [langOpen, setLangOpen] = useState(false);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
+    const h = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", h, { passive: true });
+    return () => window.removeEventListener("scroll", h);
   }, []);
 
   const navLinks = [
@@ -33,144 +29,75 @@ export default function Header() {
   ];
 
   return (
-    <header
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        transition: "background 0.4s ease, border-color 0.4s ease",
-        background: scrolled ? "rgba(10,10,11,0.92)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "0 2rem",
-          height: "72px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "2rem",
-        }}
-      >
+    <header style={{
+      position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+      background: scrolled ? "rgba(248,247,244,0.92)" : "rgba(248,247,244,0)",
+      backdropFilter: scrolled ? "blur(16px)" : "none",
+      borderBottom: scrolled ? "1px solid #e5e4e0" : "1px solid transparent",
+      transition: "background 0.35s, border-color 0.35s, backdrop-filter 0.35s",
+    }}>
+      <div style={{
+        maxWidth: 1280, margin: "0 auto", padding: "0 2rem",
+        height: 68, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem",
+      }}>
         {/* Logo */}
-        <a
-          href="#"
-          style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}
-        >
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <rect width="28" height="28" rx="6" fill="rgba(200,169,110,0.12)" />
-            <path d="M7 21L14 7L21 21" stroke="#c8a96e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M9 17h10" stroke="#c8a96e" strokeWidth="1.5" strokeLinecap="round" />
+        <a href="#" style={{ display: "flex", alignItems: "center", gap: "0.625rem", flexShrink: 0 }}>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <rect width="30" height="30" rx="7" fill="#2563eb" />
+            <path d="M8 22L15 8L22 22" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M10.5 18h9" stroke="white" strokeWidth="1.75" strokeLinecap="round" />
           </svg>
-          <span style={{ fontSize: "1rem", fontWeight: 600, letterSpacing: "-0.01em", color: "#f5f5f0" }}>
-            WIR<span style={{ color: "#c8a96e" }}>.</span>
+          <span style={{ fontSize: "1rem", fontWeight: 700, letterSpacing: "-0.02em", color: "#111110" }}>
+            WIR<span style={{ color: "#2563eb" }}>.</span>
           </span>
         </a>
 
-        {/* Desktop Nav */}
-        <nav
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "2.5rem",
-            listStyle: "none",
-          }}
-          className="hidden-mobile"
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="link-hover"
-              style={{
-                fontSize: "0.875rem",
-                fontWeight: 400,
-                color: "rgba(245,245,240,0.7)",
-                letterSpacing: "0.01em",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f5f0")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,245,240,0.7)")}
-            >
-              {link.label}
-            </a>
+        {/* Desktop nav */}
+        <nav className="hd-nav" style={{ display: "flex", gap: "2.25rem" }}>
+          {navLinks.map((l) => (
+            <a key={l.href} href={l.href} className="link-hover"
+              style={{ fontSize: "0.875rem", color: "#3d3d3a", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#2563eb")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#3d3d3a")}
+            >{l.label}</a>
           ))}
         </nav>
 
-        {/* Right side */}
-        <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexShrink: 0 }}>
-          {/* Language switcher */}
+        {/* Right */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexShrink: 0 }}>
+          {/* Lang */}
           <div style={{ position: "relative" }}>
-            <button
-              onClick={() => setLangOpen(!langOpen)}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.4rem",
-                fontSize: "0.8125rem",
-                color: "rgba(245,245,240,0.6)",
-                background: "none",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "6px",
-                padding: "0.375rem 0.625rem",
-                cursor: "pointer",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(200,169,110,0.4)";
-                (e.currentTarget as HTMLButtonElement).style.color = "#c8a96e";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.1)";
-                (e.currentTarget as HTMLButtonElement).style.color = "rgba(245,245,240,0.6)";
-              }}
+            <button onClick={() => setLangOpen(!langOpen)} style={{
+              display: "flex", alignItems: "center", gap: "0.35rem",
+              fontSize: "0.8125rem", color: "#7a7a76",
+              background: "none", border: "1px solid #e5e4e0", borderRadius: "6px",
+              padding: "0.35rem 0.625rem", cursor: "pointer", transition: "all 0.2s",
+            }}
+              onMouseEnter={(e) => { const b = e.currentTarget; b.style.borderColor = "#2563eb"; b.style.color = "#2563eb"; }}
+              onMouseLeave={(e) => { const b = e.currentTarget; b.style.borderColor = "#e5e4e0"; b.style.color = "#7a7a76"; }}
             >
-              <IconGlobe size={14} />
-              <span>{locale.toUpperCase()}</span>
-              <IconChevronDown size={12} />
+              <IconGlobe size={13} /><span>{locale.toUpperCase()}</span><IconChevronDown size={11} />
             </button>
             {langOpen && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "calc(100% + 8px)",
-                  right: 0,
-                  background: "#141414",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "10px",
-                  overflow: "hidden",
-                  minWidth: "130px",
-                  boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
-                  zIndex: 200,
-                }}
-              >
+              <div style={{
+                position: "absolute", top: "calc(100% + 8px)", right: 0,
+                background: "#fff", border: "1px solid #e5e4e0", borderRadius: "10px",
+                overflow: "hidden", minWidth: 130, boxShadow: "0 8px 32px rgba(0,0,0,0.12)", zIndex: 200,
+              }}>
                 {(["de", "en", "fa"] as const).map((loc) => (
-                  <Link
-                    key={loc}
-                    href={pathname}
-                    locale={loc}
-                    onClick={() => setLangOpen(false)}
+                  <Link key={loc} href={pathname} locale={loc} onClick={() => setLangOpen(false)}
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      padding: "0.625rem 1rem",
-                      fontSize: "0.8125rem",
-                      color: loc === locale ? "#c8a96e" : "rgba(245,245,240,0.7)",
-                      background: loc === locale ? "rgba(200,169,110,0.08)" : "transparent",
+                      display: "flex", alignItems: "center", justifyContent: "space-between",
+                      padding: "0.6rem 1rem", fontSize: "0.8125rem",
+                      color: loc === locale ? "#2563eb" : "#3d3d3a",
+                      background: loc === locale ? "#eff6ff" : "transparent",
                       transition: "background 0.15s",
                     }}
                   >
                     <span>{localeLabels[loc]}</span>
                     {loc === locale && (
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <polyline points="2,6 5,9 10,3" stroke="#c8a96e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <polyline points="2,6 5,9 10,3" stroke="#2563eb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     )}
                   </Link>
@@ -179,45 +106,18 @@ export default function Header() {
             )}
           </div>
 
-          {/* CTA */}
-          <a
-            href="#contact"
-            className="hidden-mobile"
+          <a href="#contact" className="hd-cta"
             style={{
-              fontSize: "0.8125rem",
-              fontWeight: 500,
-              color: "#0a0a0b",
-              background: "#c8a96e",
-              padding: "0.5rem 1.25rem",
-              borderRadius: "6px",
-              letterSpacing: "0.01em",
-              transition: "background 0.2s, transform 0.15s",
-              display: "inline-flex",
-              alignItems: "center",
+              fontSize: "0.8125rem", fontWeight: 600, color: "#fff",
+              background: "#2563eb", padding: "0.5rem 1.25rem", borderRadius: "7px",
+              transition: "background 0.2s, transform 0.15s", display: "inline-flex", alignItems: "center",
             }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#e8c98e";
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLAnchorElement).style.background = "#c8a96e";
-              (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
-            }}
-          >
-            Kontakt
-          </a>
+            onMouseEnter={(e) => { const a = e.currentTarget as HTMLAnchorElement; a.style.background = "#1d4ed8"; a.style.transform = "translateY(-1px)"; }}
+            onMouseLeave={(e) => { const a = e.currentTarget as HTMLAnchorElement; a.style.background = "#2563eb"; a.style.transform = "none"; }}
+          >Kontakt</a>
 
-          {/* Mobile menu toggle */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="show-mobile"
-            style={{
-              background: "none",
-              border: "none",
-              color: "#f5f5f0",
-              cursor: "pointer",
-              padding: "0.25rem",
-            }}
+          <button onClick={() => setOpen(!open)} className="hd-burger"
+            style={{ background: "none", border: "none", color: "#111110", cursor: "pointer", padding: "0.25rem", display: "none" }}
             aria-label="Menu"
           >
             {open ? <IconClose size={22} /> : <IconMenu size={22} />}
@@ -225,68 +125,35 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile nav overlay */}
+      {/* Mobile overlay */}
       {open && (
-        <div
-          style={{
-            position: "fixed",
-            inset: 0,
-            top: "72px",
-            background: "rgba(10,10,11,0.97)",
-            backdropFilter: "blur(20px)",
-            zIndex: 90,
-            display: "flex",
-            flexDirection: "column",
-            padding: "3rem 2rem",
-            gap: "0",
-          }}
-        >
-          {navLinks.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
+        <div style={{
+          position: "fixed", inset: 0, top: 68,
+          background: "rgba(248,247,244,0.98)", backdropFilter: "blur(16px)", zIndex: 90,
+          display: "flex", flexDirection: "column", padding: "2.5rem 2rem",
+        }}>
+          {navLinks.map((l) => (
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)}
               style={{
-                fontSize: "1.5rem",
-                fontWeight: 300,
-                color: "rgba(245,245,240,0.85)",
-                padding: "1.25rem 0",
-                borderBottom: "1px solid rgba(255,255,255,0.06)",
-                letterSpacing: "-0.01em",
-                transition: "color 0.2s",
+                fontSize: "1.625rem", fontWeight: 300, color: "#111110",
+                padding: "1.25rem 0", borderBottom: "1px solid #e5e4e0", letterSpacing: "-0.02em",
               }}
-            >
-              {link.label}
-            </a>
+            >{l.label}</a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setOpen(false)}
+          <a href="#contact" onClick={() => setOpen(false)}
             style={{
-              marginTop: "2rem",
-              display: "inline-flex",
-              alignItems: "center",
-              fontSize: "0.9375rem",
-              fontWeight: 500,
-              color: "#0a0a0b",
-              background: "#c8a96e",
-              padding: "0.875rem 2rem",
-              borderRadius: "8px",
-              alignSelf: "flex-start",
+              marginTop: "2rem", display: "inline-flex", alignItems: "center",
+              fontSize: "0.9375rem", fontWeight: 600, color: "#fff",
+              background: "#2563eb", padding: "0.875rem 2rem", borderRadius: "8px", alignSelf: "flex-start",
             }}
-          >
-            Kontakt
-          </a>
+          >Kontakt</a>
         </div>
       )}
 
       <style>{`
         @media (max-width: 768px) {
-          .hidden-mobile { display: none !important; }
-          .show-mobile { display: flex !important; }
-        }
-        @media (min-width: 769px) {
-          .show-mobile { display: none !important; }
+          .hd-nav, .hd-cta { display: none !important; }
+          .hd-burger { display: flex !important; }
         }
       `}</style>
     </header>

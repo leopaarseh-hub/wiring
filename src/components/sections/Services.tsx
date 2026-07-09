@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { IconCompass, IconLayers, IconBuilding, IconClipboard } from "@/components/ui/Icons";
 
 const icons = [IconCompass, IconLayers, IconBuilding, IconClipboard];
-
 const images = [
   "/service-standortanalyse.jpg",
   "/service-konzept.jpg",
@@ -18,220 +17,91 @@ export default function Services() {
   const items = t.raw("items") as { title: string; description: string }[];
 
   return (
-    <section
-      id="services"
-      style={{
-        padding: "8rem 2rem",
-        background: "rgba(255,255,255,0.015)",
-        borderTop: "1px solid rgba(255,255,255,0.05)",
-        borderBottom: "1px solid rgba(255,255,255,0.05)",
-      }}
-    >
-      <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-        {/* Section header */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "3rem",
-            alignItems: "end",
-            marginBottom: "5rem",
-          }}
-          className="services-header"
-        >
-          <div>
-            <p
-              style={{
-                fontSize: "0.75rem",
-                fontWeight: 600,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "#c8a96e",
-                marginBottom: "1.5rem",
-              }}
-            >
-              {t("label")}
-            </p>
-            <h2
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3.25rem)",
-                fontWeight: 300,
-                letterSpacing: "-0.025em",
-                lineHeight: "1.1",
-                color: "#f5f5f0",
-              }}
-            >
-              {t("title")}
-            </h2>
-          </div>
-          <p
-            style={{
-              fontSize: "1rem",
-              color: "rgba(245,245,240,0.5)",
-              lineHeight: "1.8",
-            }}
-          >
-            {t("description")}
-          </p>
+    <section id="services" style={{ padding: "8rem 2rem", background: "#f8f7f4", borderTop: "1px solid #e5e4e0" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+
+        {/* Header */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "end", marginBottom: "4rem" }} className="srv-hdr">
+          <h2 style={{
+            fontSize: "clamp(1.875rem, 3.5vw, 3rem)",
+            fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.1, color: "#111110",
+          }}>
+            {t("title")}
+          </h2>
+          <p style={{ fontSize: "1rem", color: "#7a7a76", lineHeight: 1.8 }}>{t("description")}</p>
         </div>
 
-        {/* Service cards with real images */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: "1.5rem",
-          }}
-        >
+        {/* Cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: "1.25rem" }}>
           {items.map((item, i) => {
             const Icon = icons[i];
             return (
-              <div
-                key={i}
+              <div key={i}
                 style={{
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                  position: "relative",
+                  background: "#fff", borderRadius: 16, overflow: "hidden",
+                  border: "1px solid #e5e4e0",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                  transition: "box-shadow 0.25s, transform 0.25s, border-color 0.25s",
                   cursor: "default",
-                  transition: "border-color 0.3s, transform 0.3s",
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLDivElement;
-                  el.style.borderColor = "rgba(200,169,110,0.3)";
+                  el.style.boxShadow = "0 12px 40px rgba(37,99,235,0.12), 0 4px 12px rgba(0,0,0,0.06)";
                   el.style.transform = "translateY(-4px)";
-                  const overlay = el.querySelector(".srv-overlay") as HTMLDivElement;
-                  if (overlay) overlay.style.opacity = "1";
-                  const img = el.querySelector(".srv-img") as HTMLDivElement;
-                  if (img) img.style.transform = "scale(1.04)";
+                  el.style.borderColor = "#bfdbfe";
+                  const img = el.querySelector(".si") as HTMLElement;
+                  if (img) img.style.transform = "scale(1.05)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLDivElement;
-                  el.style.borderColor = "rgba(255,255,255,0.07)";
-                  el.style.transform = "translateY(0)";
-                  const overlay = el.querySelector(".srv-overlay") as HTMLDivElement;
-                  if (overlay) overlay.style.opacity = "0";
-                  const img = el.querySelector(".srv-img") as HTMLDivElement;
-                  if (img) img.style.transform = "scale(1)";
+                  el.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
+                  el.style.transform = "none";
+                  el.style.borderColor = "#e5e4e0";
+                  const img = el.querySelector(".si") as HTMLElement;
+                  if (img) img.style.transform = "none";
                 }}
               >
                 {/* Image */}
-                <div
-                  style={{
-                    position: "relative",
-                    aspectRatio: "4/3",
-                    overflow: "hidden",
-                    background: "#0d0d0e",
-                  }}
-                >
-                  <div
-                    className="srv-img"
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      transition: "transform 0.5s ease",
-                    }}
-                  >
+                <div style={{ position: "relative", aspectRatio: "16/9", overflow: "hidden", background: "#f1f0ed" }}>
+                  <div className="si" style={{ position: "absolute", inset: 0, transition: "transform 0.5s ease" }}>
                     <Image
-                      src={images[i]}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                      style={{ objectFit: "cover", filter: "grayscale(20%) brightness(0.85)" }}
+                      src={images[i]} alt={item.title} fill
+                      sizes="(max-width:768px) 100vw, 25vw"
+                      style={{ objectFit: "cover", filter: "brightness(0.95) saturate(0.9)" }}
                     />
                   </div>
-                  {/* Image gradient overlay */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      background:
-                        "linear-gradient(to top, rgba(10,10,11,0.9) 0%, rgba(10,10,11,0.3) 50%, transparent 100%)",
-                      zIndex: 1,
-                    }}
-                  />
-                  {/* Hover highlight */}
-                  <div
-                    className="srv-overlay"
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      background: "rgba(200,169,110,0.08)",
-                      zIndex: 2,
-                      opacity: 0,
-                      transition: "opacity 0.3s",
-                    }}
-                  />
                   {/* Icon badge */}
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "1.25rem",
-                      right: "1.25rem",
-                      zIndex: 3,
-                      width: "44px",
-                      height: "44px",
-                      borderRadius: "10px",
-                      background: "rgba(10,10,11,0.65)",
-                      border: "1px solid rgba(200,169,110,0.25)",
-                      backdropFilter: "blur(8px)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "#c8a96e",
-                    }}
-                  >
-                    <Icon size={20} />
+                  <div style={{
+                    position: "absolute", top: "0.875rem", left: "0.875rem", zIndex: 2,
+                    width: 38, height: 38, borderRadius: 9,
+                    background: "rgba(255,255,255,0.92)", backdropFilter: "blur(6px)",
+                    border: "1px solid rgba(255,255,255,0.6)",
+                    display: "flex", alignItems: "center", justifyContent: "center", color: "#2563eb",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}>
+                    <Icon size={18} />
                   </div>
                 </div>
 
-                {/* Card body */}
-                <div
-                  style={{
-                    padding: "1.75rem",
-                    background: "#0a0a0b",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.75rem",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: "1.0625rem",
-                      fontWeight: 500,
-                      color: "#f5f5f0",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
+                {/* Body */}
+                <div style={{ padding: "1.5rem" }}>
+                  <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "#111110", marginBottom: "0.625rem", letterSpacing: "-0.01em" }}>
                     {item.title}
                   </h3>
-                  <p
-                    style={{
-                      fontSize: "0.875rem",
-                      color: "rgba(245,245,240,0.45)",
-                      lineHeight: "1.7",
-                    }}
-                  >
+                  <p style={{ fontSize: "0.875rem", color: "#7a7a76", lineHeight: 1.7, marginBottom: "1.25rem" }}>
                     {item.description}
                   </p>
-                  <div
-                    style={{
-                      marginTop: "0.5rem",
-                      paddingTop: "1rem",
-                      borderTop: "1px solid rgba(255,255,255,0.05)",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.375rem",
-                      fontSize: "0.75rem",
-                      color: "rgba(200,169,110,0.55)",
-                      letterSpacing: "0.04em",
-                    }}
-                  >
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <circle cx="6" cy="6" r="5" stroke="#c8a96e" strokeWidth="0.75" opacity="0.5" />
-                      <circle cx="6" cy="6" r="2" fill="#c8a96e" opacity="0.5" />
+                  <div style={{
+                    display: "inline-flex", alignItems: "center", gap: "0.375rem",
+                    fontSize: "0.75rem", fontWeight: 600, color: "#2563eb",
+                    background: "#eff6ff", border: "1px solid #dbeafe",
+                    padding: "0.3rem 0.625rem", borderRadius: 6,
+                  }}>
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <circle cx="5" cy="5" r="4.5" stroke="#2563eb" strokeWidth="0.75" />
+                      <circle cx="5" cy="5" r="1.5" fill="#2563eb" />
                     </svg>
-                    HOAI Phase {i + 1}–{i + 2}
+                    HOAI {i + 1}–{i + 2}
                   </div>
                 </div>
               </div>
@@ -239,14 +109,7 @@ export default function Services() {
           })}
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .services-header {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+      <style>{`@media(max-width:768px){.srv-hdr{grid-template-columns:1fr !important;}}`}</style>
     </section>
   );
 }
